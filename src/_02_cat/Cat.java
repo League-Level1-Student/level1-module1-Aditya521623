@@ -17,6 +17,7 @@ package _02_cat;
 		*/
 
 
+
 public class Cat {
 
 	private String name;
@@ -35,6 +36,11 @@ public class Cat {
 			System.out.println("i don't know my own name!");
 		else
 			System.out.println("my name is " + name);
+	}
+	
+	public boolean isAlive()
+	{
+		return (lives > 0);
 	}
 
 	void kill() {
