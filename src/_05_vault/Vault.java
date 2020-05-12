@@ -1,15 +1,19 @@
 package _05_vault;
 
-import java.util.Random;
-
-import javax.swing.JOptionPane;
 
 public class Vault {
 	
+	private int realcode;	
+	
+	
+	public Vault(int code) {
+		realcode = code;
+		
+	}
 	
 	public boolean tryCode(int code) {
 
-		System.out.println(realcode);
+		System.out.println(code);
 		if (code == realcode) {
 			return true;
 		} else {
@@ -17,9 +21,5 @@ public class Vault {
 
 		}
 	}
-
 	
-	private int realcode;	
-
-
 }
