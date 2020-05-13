@@ -1,5 +1,7 @@
 package _06_duck;
 
+import javax.swing.JOptionPane;
+
 public class duck {
 
 	private int numberOfFriends;
@@ -10,11 +12,11 @@ public class duck {
 		this.numberOfFriends = numberOfFriends;
 	}
 
-	public void food () {
-
+	public void food() {
+		JOptionPane.showMessageDialog(null, "Im a duck. MY favorite food is " + favoriteFood);
 	}
 
 	public void hi() {
-
+		JOptionPane.showMessageDialog(null, "Im a duck. I have " + numberOfFriends + " friend. Hello friend.");
 	}
 }
