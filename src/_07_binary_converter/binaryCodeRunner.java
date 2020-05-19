@@ -1,36 +1,38 @@
 package _07_binary_converter;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class binaryCodeRunner {
+public class binaryCodeRunner implements ActionListener {
 
-	public static void main(String[] args) {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JTextField answer = new JTextField(20);
+	JButton button = new JButton("convert");
 
-		JFrame frame = new JFrame();
+	public void showButton() {
 
-		frame.setVisible(true);
+		panel.add(button);
 
-		JPanel panel = new JPanel();
+		panel.add(answer);
 
 		frame.add(panel);
 
-		JTextField answer = new JTextField(20);
-
-		frame.add(answer);
-
-		JButton button = new JButton("convert");
-
-		frame.add(button);		
-
-		frame.setLayout(new GridLayout());
+		panel.setLayout(new GridLayout());
 
 		frame.pack();
+
+		frame.setVisible(true);
+
+		button.addActionListener(this);
 
 	}
 
@@ -52,8 +54,19 @@ public class binaryCodeRunner {
 			JOptionPane.showMessageDialog(null, "Enter a binary, silly!!!");
 			return "-";
 		}
-		
-		
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		if (e.getSource() == (button)) {
+			String text = answer.getText();
+
+			String binary = convert(text);
+			
+			answer.setText(binary);
+		}
 
 	}
 }
